@@ -227,24 +227,26 @@ class ThreeScene extends Component {
 
 							pos.add(this.camera.position.clone().sub(pos).normalize().multiplyScalar(2));
 							// this.clipActions[key].play();
-							this.viewObjectFlag = true;
-							this.orbitControls.enabled = false;
+							// this.viewObjectFlag = true;
+							// this.orbitControls.enabled = false;
 
-							gsap.to(this.camera.position, {
-								duration: 3, x: pos.x, y: pos.y, z: pos.z, onUpdate: () => {
-									// this.orbitControls.target.copy(this.camera.position)
-									// this.orbitControls.update();
-									// this.camera.lookAt(tmp)
-								}, onComplete: () => {
-									// this.orbitControls.target.copy(pos);
-									this.clipActions[key].play();
-									this.orbitControls.enabled = true;
-									this.orbitControls.update();
-									this.viewObjectFlag = false;
-								}
-							});
-							
-							this.orbitControls.target.add(pos.clone().sub(this.camera.position));
+							this.clipActions[key].play();
+
+							// gsap.to(this.camera.position, {
+							// 	duration: 3, x: pos.x, y: pos.y, z: pos.z, onUpdate: () => {
+							// 		// this.orbitControls.target.copy(this.camera.position)
+							// 		// this.orbitControls.update();
+							// 		// this.camera.lookAt(tmp)
+							// 	}, onComplete: () => {
+							// 		// this.orbitControls.target.copy(pos);
+							// 		this.clipActions[key].play();
+							// 		this.orbitControls.enabled = true;
+							// 		this.orbitControls.update();
+							// 		this.viewObjectFlag = false;
+							// 	}
+							// });
+							//
+							// this.orbitControls.target.add(pos.clone().sub(this.camera.position));
 							// console.log(this.orbitControls.object)
 							// this.orbitControls.object.rotateOnAxis(new THREE.Vector3(0, 1, 0),Math.PI / 6)
 
